@@ -1,6 +1,6 @@
 # Auto-C-Execution
 
-## langages
+## languages
 
 [English](../README.md)
 
