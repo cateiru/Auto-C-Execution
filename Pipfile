@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pylint = "*"
+mypy = "*"
+flake8 = "*"
+tox = "*"
+
+[packages]
+Auto-C-Execution = {path = ".", editable = true}
+
+[requires]
+python_version = "3.6"
