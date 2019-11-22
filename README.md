@@ -1,6 +1,6 @@
 # Auto-C-Execution
 
-## langages
+## languages
 
 [Japanese](Example/README_jp.md)
 
