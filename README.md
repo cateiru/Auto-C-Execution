@@ -2,7 +2,7 @@
 
 ## langages
 
-[Japanese](README_jp.md)
+[Japanese](Example/README_jp.md)
 
 ## Description
 

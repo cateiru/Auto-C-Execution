@@ -2,7 +2,7 @@
 
 ## langages
 
-[English](README.md)
+[English](../README.md)
 
 ## 説明
 
