@@ -1,4 +1,4 @@
-from main import check
+from autoce import check
 
 
 def test_brew_install():
