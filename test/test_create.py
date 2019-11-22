@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from autoce import execution
+from autoce import create
 
 
 def test_exe():
@@ -11,4 +11,4 @@ def test_exe():
     if not os.path.isfile(test_c_file):
         with open(test_c_file, 'w') as f:
             f.write('#include <stdio.h>\nint main() { printf("HelloWorld.\\n"); }\n')
-    assert execution.execution(c_dir) is None
+    assert create.execution(c_dir) is None
