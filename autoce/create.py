@@ -46,13 +46,13 @@ def output_program(compile_path: str) -> str:
     Returns:
         str: Output result.
     """
-    output_log = subprocess.check_output(compile_path).decode('utf-8')
+    output_log = subprocess.run([compile_path], stdout=subprocess.PIPE, check=True)
     print(f'`a.out` file path: {compile_path}')
     print('-' * 80)
-    print(output_log)
+    print(output_log.stdout.decode('utf-8'))
     print('-' * 80)
 
-    return output_log
+    return output_log.stdout.decode('utf-8')
 
 
 def create_image(output_log: str, save_dir: str, file_name: str) -> None:
