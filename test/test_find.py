@@ -5,7 +5,7 @@ from autoce import find
 
 
 def test_find_c_file():
-    os.chdir('../')
+    os.chdir('../../')
     c_dir = subprocess.check_output(['pwd']).decode('utf-8')
     c_dir = os.path.join(c_dir[:-1], 'test')
     test_c_file = os.path.join(c_dir, 'test.c')

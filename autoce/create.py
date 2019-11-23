@@ -2,7 +2,6 @@
 Compile and save the resulting output as an image.
 """
 import os
-import shutil
 import subprocess
 
 from PIL import Image, ImageDraw
@@ -22,20 +21,19 @@ def execution(target_directory: str) -> None:
     """
     c_file_list = find.find_c_file(target_directory)
     execution_directory = find.find_dir(target_directory)
-    os.chdir(target_directory)
+    os.chdir(execution_directory)
     for c_file_path in c_file_list:
         print(f'c_file path: {c_file_path}')
         is_success = subprocess.check_call(['gcc', c_file_path])
         if is_success != 0:
             print('=' * 80)
             raise Exception('gcc compilation failed.')
-        compile_path = os.path.join(execution_directory, 'a.out')
-        if os.path.isfile(compile_path):
-            os.remove(compile_path)
 
-        compile_path = shutil.move(os.path.join(target_directory, 'a.out'), execution_directory)
+        compile_path = os.path.join(execution_directory, 'a.out')
         output_log = output_program(compile_path)
         create_image(output_log, execution_directory, c_file_path)
+        if os.path.isfile(compile_path):
+            os.remove(compile_path)
 
 
 def output_program(compile_path: str) -> str:
