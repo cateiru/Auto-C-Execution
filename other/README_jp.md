@@ -1,5 +1,8 @@
 # Auto-C-Execution
 
+![teitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fyuto51942%2FAuto-C-Execution)
+![Python3.6](https://img.shields.io/badge/Python-3.6-brightgreen)
+
 ## languages
 
 [English](../README.md)
@@ -14,7 +17,7 @@ Macのみ。
 
 ## 詳細
 
-* 必要なソフトフェア。が存在しない場合自動的にインストールします。
+* 必要なソフトフェアが存在しない場合自動的にインストールします。
 * `gcc`により自動的にC言語で書かれたプログラムをコンパイルします。
 * 正常にコンパイルできた場合`.out`を実行します。
 * 正常に実行ができたら結果logを画像として出力します。
@@ -65,3 +68,9 @@ if __name__ == "__main__":
 
 * Google Python Style Guideに基づいています。
 * TDDで開発をしています。テストを実行する際はTerminalで`tox`と入力します。
+
+## 更新履歴
+
+### v1.2.0
+
+* 出力結果によって画像サイズが変更されるようにした。

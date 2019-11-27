@@ -1,7 +1,7 @@
 # Auto-C-Execution
 
-https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fyuto51942%2FAuto-C-Execution
-https://img.shields.io/badge/Python-3.6-brightgreen
+![teitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fyuto51942%2FAuto-C-Execution)
+![Python3.6](https://img.shields.io/badge/Python-3.6-brightgreen)
 
 ## languages
 
@@ -68,3 +68,9 @@ if __name__ == "__main__":
 
 * Based on Google Python Style Guide.
 * I am developing at TDD. To run the test, type `tox` in Terminal.
+
+## Change log
+
+### v1.2.0
+
+* The image size is changed according to the output result.
