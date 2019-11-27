@@ -3,6 +3,8 @@ Compile and save the resulting output as an image.
 """
 import os
 import subprocess
+from math import ceil
+from typing import Tuple
 
 from PIL import Image, ImageDraw
 
@@ -65,7 +67,38 @@ def create_image(output_log: str, save_dir: str, file_name: str) -> None:
         file_name (str): The name of the image file to save.
     """
     image_path = os.path.join(save_dir, f'{file_name}.png')
-    image = Image.new('RGB', (500, 1000))
+    log_break, log_max_len = determine_image_size(output_log)
+    height = ceil(log_break*15 + 100)
+    width = ceil(log_max_len*10 + 50)
+
+    image = Image.new('RGB', (width, height))
     draw = ImageDraw.Draw(image)
     draw.text((0, 0), output_log)
     image.save(image_path)
+
+
+def determine_image_size(output_log: str) -> Tuple[int, int]:
+    """
+    Get the size of the output character to determine the size of the image to be created.
+
+    Args:
+        output_log (str): Log of executing `.c`.
+
+    Returns:
+        Tuple[int, int]: The number of line breaks and the maximum number of characters when a line break occurs.
+    """
+
+    line_break = output_log.count('\n')
+    if line_break == 0:
+        return 0, len(output_log)
+
+    line_count = 0
+    max_line = 0
+    for element in output_log:
+        if element == '\n':
+            max_line = max(max_line, line_count)
+            line_count = 0
+            continue
+        line_count += 1
+
+    return line_break, max_line
