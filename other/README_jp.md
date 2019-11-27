@@ -1,7 +1,9 @@
 # Auto-C-Execution
 
-![teitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fyuto51942%2FAuto-C-Execution)
 ![Python3.6](https://img.shields.io/badge/Python-3.6-brightgreen)
+![size](https://img.shields.io/github/repo-size/yuto51942/Auto-C-Execution)
+![lastcommit](https://img.shields.io/github/last-commit/yuto51942/Auto-C-Execution)
+![twitter](https://img.shields.io/twitter/follow/cateiru?style=social)
 
 ## languages
 
@@ -74,3 +76,5 @@ if __name__ == "__main__":
 ### v1.2.0
 
 * 出力結果によって画像サイズが変更されるようにした。
+
+![follow](https://img.shields.io/github/followers/yuto51942?label=Follow&style=social)
