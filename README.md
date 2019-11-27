@@ -1,5 +1,8 @@
 # Auto-C-Execution
 
+https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fyuto51942%2FAuto-C-Execution
+https://img.shields.io/badge/Python-3.6-brightgreen
+
 ## languages
 
 [Japanese](Example/README_jp.md)
