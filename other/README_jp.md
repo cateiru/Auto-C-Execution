@@ -13,16 +13,19 @@
 
 大学、高校などのC言語の授業でのプログラム作成のお手伝いをします。
 
-## 動作環境
-
-Macのみ。
-
-## 詳細
-
 * 必要なソフトフェアが存在しない場合自動的にインストールします。
 * `gcc`により自動的にC言語で書かれたプログラムをコンパイルします。
 * 正常にコンパイルできた場合`.out`を実行します。
 * 正常に実行ができたら結果logを画像として出力します。
+* 生成画像の例  
+    [image1](Images/test.c.png)  
+    [image2](Images/test2.c.png)  
+    [image3](Images/test3.c.png)
+
+## 動作環境
+
+OS: MacOS  
+Font: Menlo.ttc
 
 ## 注意
 
@@ -71,9 +74,8 @@ if __name__ == "__main__":
     main(sys.argv)
 ```
 
-## 静的解析、テストについて
+## テストについて
 
-* Google Python Style Guideに基づいています。
 * TDDで開発をしています。テストを実行する際はTerminalで`tox`と入力します。
 
 ## 更新履歴
@@ -81,5 +83,9 @@ if __name__ == "__main__":
 ### v1.2.0
 
 * 出力結果によって画像サイズが変更されるようにした。
+
+### v1.2.5
+
+* 生成する画像のバックカラーとフォント、フォントサイズを変更しより見やすくした。
 
 ![follow](https://img.shields.io/github/followers/yuto51942?label=Follow&style=social)

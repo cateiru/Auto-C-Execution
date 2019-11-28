@@ -5,7 +5,6 @@
 ![lastcommit](https://img.shields.io/github/last-commit/yuto51942/Auto-C-Execution)
 ![twitter](https://img.shields.io/twitter/follow/cateiru?style=social)
 
-
 ## languages
 
 [Japanese](other/README_jp.md)
@@ -14,16 +13,19 @@
 
 We will help you create programs in C language classes such as universities and high schools.
 
-## Operating environment
-
-Mac OS only.
-
-## Details
-
 * Necessary software fair. Install automatically if does not exist.
 * `gcc` automatically compiles programs written in C.
 * If it compiles normally, execute `.out`.
 * If the execution is successful, the result log will be output as an image.
+* Example of generated image  
+    [image1](other/Images/test.c.png)
+    [image2](other/Images/test2.c.png)
+    [image3](other/Images/test3.c.png)
+
+## Operating environment
+
+OS: MacOS
+Font: Menlo.ttc
 
 ## Caution
 
@@ -39,7 +41,7 @@ Mac OS only.
     ```
 
 2. Download `main.py` from this repository, or copy and paste the code below to create a new file.
-3. Change to the directory containing `.c` and move` main.py` there.
+3. Change to the directory containing `.c` and move `main.py` there.
 4. Change to that directory in Terminal.
 5. Run that `main.py`.
 
@@ -72,9 +74,8 @@ if __name__ == "__main__":
     main(sys.argv)
 ```
 
-## About static analysis and testing
+## About testing
 
-* Based on Google Python Style Guide.
 * I am developing at TDD. To run the test, type `tox` in Terminal.
 
 ## Change log
@@ -82,5 +83,9 @@ if __name__ == "__main__":
 ### v1.2.0
 
 * The image size is changed according to the output result.
+
+### v1.2.5
+
+* Changed the background color, font, and font size of the generated image to make it easier to see.
 
 ![follow](https://img.shields.io/github/followers/yuto51942?label=Follow&style=social)
