@@ -6,7 +6,7 @@ import subprocess
 from math import ceil
 from typing import Tuple
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 from autoce import find
 
@@ -68,12 +68,15 @@ def create_image(output_log: str, save_dir: str, file_name: str) -> None:
     """
     image_path = os.path.join(save_dir, f'{file_name}.png')
     log_break, log_max_len = determine_image_size(output_log)
-    height = ceil(log_break*15 + 100)
-    width = ceil(log_max_len*10 + 50)
+    height = ceil(log_break*35 + 100)
+    width = ceil(log_max_len*20 + 50)
+    font_size = 30
+    font_name = '/System/Library/Fonts/Menlo.ttc'
 
-    image = Image.new('RGB', (width, height))
+    image = Image.new('RGB', (width, height), (22, 24, 33))
     draw = ImageDraw.Draw(image)
-    draw.text((0, 0), output_log)
+    font = ImageFont.truetype(font_name, font_size)
+    draw.text((0, 0), output_log, font=font)
     image.save(image_path)
 
 
