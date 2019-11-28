@@ -25,6 +25,11 @@ Mac OS only.
 * If it compiles normally, execute `.out`.
 * If the execution is successful, the result log will be output as an image.
 
+## Caution
+
+* Multiple file compilation is not supported.
+* If there is an input, the previous output is not displayed on the terminal.
+
 ## How to use
 
 1. Install from Github repository using pip.
