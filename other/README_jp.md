@@ -25,7 +25,7 @@
 ## 動作環境
 
 OS: MacOS  
-Font: Menlo.ttc
+Font: `Menlo.ttc` もしくは `ヒラギノ角ゴシック W５`
 
 ## 注意
 
@@ -87,5 +87,9 @@ if __name__ == "__main__":
 ### v1.2.5
 
 * 生成する画像のバックカラーとフォント、フォントサイズを変更しより見やすくした。
+
+### v1.2.6
+
+* 生成画像で日本語がうまく表示できない問題を解決。
 
 ![follow](https://img.shields.io/github/followers/yuto51942?label=Follow&style=social)

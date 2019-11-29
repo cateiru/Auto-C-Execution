@@ -18,14 +18,14 @@ We will help you create programs in C language classes such as universities and 
 * If it compiles normally, execute `.out`.
 * If the execution is successful, the result log will be output as an image.
 * Example of generated image  
-    [image1](other/Images/test.c.png)
-    [image2](other/Images/test2.c.png)
+    [image1](other/Images/test.c.png)  
+    [image2](other/Images/test2.c.png)  
     [image3](other/Images/test3.c.png)
 
 ## Operating environment
 
-OS: MacOS
-Font: Menlo.ttc
+OS: MacOS  
+Font: `Menlo.ttc` or  `ヒラギノ角ゴシック W5`
 
 ## Caution
 
@@ -87,5 +87,9 @@ if __name__ == "__main__":
 ### v1.2.5
 
 * Changed the background color, font, and font size of the generated image to make it easier to see.
+
+### v1.2.7
+
+* Solved the problem that Japanese was not displayed well in the generated image.
 
 ![follow](https://img.shields.io/github/followers/yuto51942?label=Follow&style=social)
