@@ -32,13 +32,13 @@ def execution(target_directory: str) -> None:
             raise Exception('gcc compilation failed.')
 
         compile_path = os.path.join(execution_directory, 'a.out')
-        output_log = output_program(compile_path)
-        create_image(output_log, execution_directory, c_file_path)
+        output_log = _output_program(compile_path)
+        _create_image(output_log, execution_directory, c_file_path)
         if os.path.isfile(compile_path):
             os.remove(compile_path)
 
 
-def output_program(compile_path: str) -> str:
+def _output_program(compile_path: str) -> str:
     """
     Run the compiled file.
 
@@ -57,7 +57,7 @@ def output_program(compile_path: str) -> str:
     return output_log.stdout.decode('utf-8')
 
 
-def create_image(output_log: str, save_dir: str, file_name: str) -> None:
+def _create_image(output_log: str, save_dir: str, file_name: str) -> None:
     """
     The argument string is saved in the image format of `.png`.
 
@@ -67,20 +67,22 @@ def create_image(output_log: str, save_dir: str, file_name: str) -> None:
         file_name (str): The name of the image file to save.
     """
     image_path = os.path.join(save_dir, f'{file_name}.png')
-    log_break, log_max_len = determine_image_size(output_log)
+    log_break, log_max_len = _determine_image_size(output_log)
     height = ceil(log_break*35 + 100)
-    width = ceil(log_max_len*20 + 50)
-    font_size = 30
-    font_name = '/System/Library/Fonts/Menlo.ttc'
+    width = ceil(log_max_len*30 + 50)
+    if os.path.isfile('/System/Library/Fonts/ヒラギノ角ゴシック W5.ttc'):
+        font_name = '/System/Library/Fonts/ヒラギノ角ゴシック W5.ttc'
+    else:
+        font_name = '/System/Library/Fonts/Menlo.ttc'
 
     image = Image.new('RGB', (width, height), (22, 24, 33))
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(font_name, font_size)
+    font = ImageFont.truetype(font_name, 30)
     draw.text((0, 0), output_log, font=font)
     image.save(image_path)
 
 
-def determine_image_size(output_log: str) -> Tuple[int, int]:
+def _determine_image_size(output_log: str) -> Tuple[int, int]:
     """
     Get the size of the output character to determine the size of the image to be created.
 

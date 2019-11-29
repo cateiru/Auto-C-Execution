@@ -12,4 +12,4 @@ def test_exe():
 
 def test_determine_image_size():
     log = 'HelloWorld\nHelloWorld\nHelloHelloWorld\n'
-    assert create.determine_image_size(log) == (3, 15)
+    assert create._determine_image_size(log) == (3, 15)
