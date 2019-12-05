@@ -32,13 +32,13 @@ def execution(target_directory: str) -> None:
             raise Exception('gcc compilation failed.')
 
         compile_path = os.path.join(execution_directory, 'a.out')
-        output_log = _output_program(compile_path)
-        _create_image(output_log, execution_directory, c_file_path)
+        output_log = __output_program(compile_path)
+        __create_image(output_log, execution_directory, c_file_path)
         if os.path.isfile(compile_path):
             os.remove(compile_path)
 
 
-def _output_program(compile_path: str) -> str:
+def __output_program(compile_path: str) -> str:
     """
     Run the compiled file.
 
@@ -57,7 +57,7 @@ def _output_program(compile_path: str) -> str:
     return output_log.stdout.decode('utf-8')
 
 
-def _create_image(output_log: str, save_dir: str, file_name: str) -> None:
+def __create_image(output_log: str, save_dir: str, file_name: str) -> None:
     """
     The argument string is saved in the image format of `.png`.
 
@@ -67,7 +67,7 @@ def _create_image(output_log: str, save_dir: str, file_name: str) -> None:
         file_name (str): The name of the image file to save.
     """
     image_path = os.path.join(save_dir, f'{file_name}.png')
-    log_break, log_max_len = _determine_image_size(output_log)
+    log_break, log_max_len = __determine_image_size(output_log)
     height = ceil(log_break*35 + 100)
     width = ceil(log_max_len*30 + 50)
     if os.path.isfile('/System/Library/Fonts/ヒラギノ角ゴシック W5.ttc'):
@@ -82,7 +82,7 @@ def _create_image(output_log: str, save_dir: str, file_name: str) -> None:
     image.save(image_path)
 
 
-def _determine_image_size(output_log: str) -> Tuple[int, int]:
+def __determine_image_size(output_log: str) -> Tuple[int, int]:
     """
     Get the size of the output character to determine the size of the image to be created.
 
